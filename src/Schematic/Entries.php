@@ -51,46 +51,37 @@ class Entries implements Iterator, IEntries
 	/**
 	 * @return Entry
 	 */
-	public function current()
+	public function current(): mixed
 	{
 		return $this->get($this->key());
 	}
 
 
-	public function next()
+	public function next(): void
 	{
 		next($this->items);
 	}
 
 
-	/**
-	 * @return mixed
-	 */
-	public function key()
+	public function key(): mixed
 	{
 		return key($this->items);
 	}
 
 
-	/**
-	 * @return bool
-	 */
-	public function valid()
+	public function valid(): bool
 	{
 		return array_key_exists(key($this->items), $this->items);
 	}
 
 
-	public function rewind()
+	public function rewind(): void
 	{
 		reset($this->items);
 	}
 
 
-	/**
-	 * @return int
-	 */
-	public function count()
+	public function count(): int
 	{
 		return count($this->items);
 	}
