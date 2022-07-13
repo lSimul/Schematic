@@ -182,8 +182,8 @@ class Entry implements JsonSerializable
 			self::parseAssociations($calledClass);
 		}
 	}
-	
-	public function jsonSerialize()
+
+	public function jsonSerialize(): mixed
 	{
 		return $this->data;
 	}
